@@ -25,7 +25,7 @@ const PostAcommentCard = () => {
             user : user?.id,
             postId : id,
         }
-        // console.log(newComment);
+        console.log(newComment);
         try {
             const response = await  postComment(newComment).unwrap();
             console.log(response);
@@ -33,7 +33,7 @@ const PostAcommentCard = () => {
             setcomment('');
             refetch();
         } catch (error) {
-            alert('An error occurred while psoting the comment')
+            alert(error.message);
         }
     }
     return (
